@@ -73,7 +73,6 @@ const App: React.FC = () => {
           barStyle="light-content" // 텍스트 색상을 밝은 색으로 설정
           backgroundColor="#0f0f0f" // 상태 표시줄 배경을 검은색으로 설정
         />
-        {error ? (
           // Error screen if there is an error
           <View style={styles.errorContainer}>
             <Text style={styles.errorText}>Error Loading Page</Text>
@@ -82,27 +81,6 @@ const App: React.FC = () => {
               <Text style={styles.retryButtonText}>Retry</Text>
             </TouchableOpacity>
           </View>
-        ) : (
-          // WebView if no error
-          <WebView
-            source={{ uri: webViewUrl }}
-            style={styles.webview}
-            javaScriptEnabled={true}
-            domStorageEnabled={true}
-            startInLoadingState={true}
-            originWhitelist={['*']}
-            allowFileAccess={true} // 파일 접근 허용
-            mixedContentMode="always" // HTTP와 HTTPS 혼합 컨텐츠 허용
-            allowsInlineMediaPlayback={true}
-            mediaPlaybackRequiresUserAction={false}
-            onLoadEnd={() => console.log("Load Ended")}
-            onError={(syntheticEvent) => {
-              const { nativeEvent } = syntheticEvent;
-              console.error("Error loading page:", nativeEvent);
-              setError(nativeEvent.description); // Set error message in state
-            }}
-          />
-        )}
       </SafeAreaView>
     </View>
   );
