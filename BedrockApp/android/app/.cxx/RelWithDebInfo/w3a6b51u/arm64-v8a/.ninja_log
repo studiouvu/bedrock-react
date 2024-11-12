@@ -1,0 +1,27 @@
+# ninja log v5
+1	23	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/CMakeFiles/cmake.verify_globs	b41fef4a1c9d914f
+8	1819	7531330732381020	CMakeFiles/appmodules.dir/OnLoad.cpp.o	9674f2de495e7f30
+16	1691	7531322979022138	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/States.cpp.o	a7db3b5117f589d4
+9	2045	7531322982540883	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/RNCWebViewSpecJSI-generated.cpp.o	c2299ea754d932a8
+10	2665	7531330740777976	CMakeFiles/appmodules.dir/E_/GitHub/bedrock-react/BedrockApp/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	7dc407e74185c58c
+5	2078	7531322982863756	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/RNCWebViewSpec-generated.cpp.o	e5b53ed6c5dae4e0
+12	2644	7531322988488701	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/EventEmitters.cpp.o	c733b582d64b202
+19	3553	7531322997613742	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/ShadowNodes.cpp.o	9c53a28925cfa234
+7	4202	7531323004051721	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/ComponentDescriptors.cpp.o	5071513a8777b65f
+14	4350	7531323005517788	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/Props.cpp.o	3ecbd11ebadc62a0
+2666	2719	7531330741361162	E:/GitHub/bedrock-react/BedrockApp/android/app/build/intermediates/cxx/RelWithDebInfo/w3a6b51u/obj/arm64-v8a/libappmodules.so	f7d48f962b337a3
+20	1329	7531330727506284	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/EventEmitters.cpp.o	80dd76e1cc09b3b9
+20	188	7531332949545232	build.ninja	5845c6323183d56b
+14	1180	7531330726029640	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/States.cpp.o	3a8bb25062bdbfaf
+16	1523	7531330729436531	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/ShadowNodes.cpp.o	f0c8695c130c30ec
+18	1594	7531330730143672	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/ComponentDescriptors.cpp.o	d7f170b07828fc1d
+24	1642	7531330730583000	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/rnasyncstorageJSI-generated.cpp.o	499f499a25e5e903
+12	1666	7531330730835224	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/Props.cpp.o	bb2da611228cef2f
+22	1717	7531330731351822	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/rnasyncstorage-generated.cpp.o	d50f584a229167a9
+0	13	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/CMakeFiles/cmake.verify_globs	b41fef4a1c9d914f
+1	10	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/CMakeFiles/cmake.verify_globs	b41fef4a1c9d914f
+0	11	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/CMakeFiles/cmake.verify_globs	b41fef4a1c9d914f
+1	11	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/CMakeFiles/cmake.verify_globs	b41fef4a1c9d914f
+0	10	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/CMakeFiles/cmake.verify_globs	b41fef4a1c9d914f
+1	12	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/CMakeFiles/cmake.verify_globs	b41fef4a1c9d914f
+0	10	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/CMakeFiles/cmake.verify_globs	b41fef4a1c9d914f

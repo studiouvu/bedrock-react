@@ -1,0 +1,17 @@
+# ninja log v5
+1	22	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/Debug/562ka256/arm64-v8a/CMakeFiles/cmake.verify_globs	5d059ef2b53521d7
+13	2967	7531306938925536	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/States.cpp.o	54be2bc8daa1f6ba
+11	3250	7531306941714558	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/RNCWebViewSpecJSI-generated.cpp.o	5087a27604668a6c
+5	3269	7531306941922133	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/RNCWebViewSpec-generated.cpp.o	c19ce17033d7123e
+2	3681	7531306946034035	CMakeFiles/appmodules.dir/OnLoad.cpp.o	6fa175401eea8c30
+9	3757	7531306946758918	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/EventEmitters.cpp.o	80895109cbc72fc0
+6	4920	7531306958434133	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/ShadowNodes.cpp.o	f93e60ef6b392934
+8	5251	7531306961672678	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/Props.cpp.o	55ad5051252648e7
+4	5363	7531306962793101	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/ComponentDescriptors.cpp.o	8e515fb2e8943c99
+0	5466	7531306963798965	CMakeFiles/appmodules.dir/E_/GitHub/bedrock-react/BedrockApp/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	5de3e04fdf9b12c1
+5467	5544	7531306964617864	E:/GitHub/bedrock-react/BedrockApp/android/app/build/intermediates/cxx/Debug/562ka256/obj/arm64-v8a/libappmodules.so	ef8fb7157b7f36dc
+1	13	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/Debug/562ka256/arm64-v8a/CMakeFiles/cmake.verify_globs	5d059ef2b53521d7
+1	12	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/Debug/562ka256/arm64-v8a/CMakeFiles/cmake.verify_globs	5d059ef2b53521d7
+1	11	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/Debug/562ka256/arm64-v8a/CMakeFiles/cmake.verify_globs	5d059ef2b53521d7
+1	11	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/Debug/562ka256/arm64-v8a/CMakeFiles/cmake.verify_globs	5d059ef2b53521d7
+1	16	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/Debug/562ka256/arm64-v8a/CMakeFiles/cmake.verify_globs	5d059ef2b53521d7

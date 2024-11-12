@@ -5,113 +5,97 @@
  * @format
  */
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
-  Text,
-  useColorScheme,
+  Platform,
+  StatusBar,
+  ActivityIndicator,
   View,
+  Alert,
 } from 'react-native';
+import { WebView } from 'react-native-webview';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import UUID from 'react-native-uuid';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const DEVICE_ID_KEY = 'DEVICE_ID';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+const App: React.FC = () => {
+  const [deviceId, setDeviceId] = useState<string | null>(null);
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  useEffect(() => {
+    const getDeviceId = async () => {
+      try {
+        // AsyncStorage에서 deviceId 가져오기
+        let storedDeviceId = await AsyncStorage.getItem(DEVICE_ID_KEY);
+        console.log('Stored Device ID:', storedDeviceId);
+
+        if (!storedDeviceId) {
+          // 새 UUID 생성
+          const newUuid = UUID.v4().toString();
+          console.log('Generated New UUID:', newUuid);
+
+          // AsyncStorage에 저장
+          await AsyncStorage.setItem(DEVICE_ID_KEY, newUuid);
+          storedDeviceId = newUuid;
+        }
+
+        setDeviceId(storedDeviceId);
+      } catch (error) {
+        console.error('Error retrieving or generating deviceId:', error);
+        Alert.alert('Error', 'Failed to load device ID.');
+      }
+    };
+
+    getDeviceId();
+  }, []);
+
+  // deviceId가 아직 로드되지 않은 경우 로딩 인디케이터 표시
+  if (!deviceId) {
+    return (
+      <SafeAreaView style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#ffffff" />
+      </SafeAreaView>
+    );
+  }
+
+  // deviceId를 쿼리 파라미터로 추가한 URL 생성
+  const webViewUrl = `https://bedrock.es?deviceId=${deviceId}`;
+
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView style={styles.container}>
       <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
+        barStyle="light-content" // 텍스트 색상을 밝은 색으로 설정
+        backgroundColor="#0f0f0f" // 상태 표시줄 배경을 검은색으로 설정
       />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+      <WebView
+        source={{ uri: webViewUrl }}
+        style={styles.webview}
+        javaScriptEnabled={true}
+        domStorageEnabled={true}
+        startInLoadingState={true}
+        // 선택 사항: 네비게이션 상태 변경 핸들링
+        // onNavigationStateChange={(navState) => { /* 상태 변경 처리 */ }}
+      />
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    flex: 1,
+    paddingTop: Platform.OS === 'android' ? 0 : StatusBar.currentHeight,
+    backgroundColor: '#0f0f0f', // 배경색을 검은색으로 설정
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  webview: {
+    flex: 1,
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
+  loadingContainer: {
+    flex: 1,
+    backgroundColor: '#0f0f0f', // 배경색을 검은색으로 설정
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

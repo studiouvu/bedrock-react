@@ -1,0 +1,9 @@
+E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/CMakeFiles/appmodules.dir
+E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/CMakeFiles/edit_cache.dir
+E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/CMakeFiles/rebuild_cache.dir
+E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir
+E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/rnasyncstorage_autolinked_build/CMakeFiles/edit_cache.dir
+E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/rnasyncstorage_autolinked_build/CMakeFiles/rebuild_cache.dir
+E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir
+E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/RNCWebViewSpec_autolinked_build/CMakeFiles/edit_cache.dir
+E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/arm64-v8a/RNCWebViewSpec_autolinked_build/CMakeFiles/rebuild_cache.dir

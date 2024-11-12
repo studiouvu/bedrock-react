@@ -1,0 +1,27 @@
+# ninja log v5
+15	1566	7531330815838714	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/rnasyncstorage-generated.cpp.o	d2b2db2cf6f89a61
+1	15	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/x86_64/CMakeFiles/cmake.verify_globs	e44bb4f4261bde88
+13	1099	7531323151912772	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/States.cpp.o	2af6ae368b5c186c
+7	1562	7531323156523311	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/RNCWebViewSpecJSI-generated.cpp.o	db4163a500598d6d
+6	2560	7531330825725182	CMakeFiles/appmodules.dir/E_/GitHub/bedrock-react/BedrockApp/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	7dd0a2a3914de3dd
+6	1609	7531323156977001	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/RNCWebViewSpec-generated.cpp.o	7c5971cfea05d089
+7	1725	7531330817432595	CMakeFiles/appmodules.dir/OnLoad.cpp.o	126d7eafaa47a219
+16	1826	7531323159163759	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/ShadowNodes.cpp.o	cd2c0530bd581549
+9	2188	7531323162754689	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/EventEmitters.cpp.o	e341bdb4b00b80f0
+4	2406	7531323164900679	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/ComponentDescriptors.cpp.o	41782481b485030b
+11	2739	7531323168225826	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/Props.cpp.o	5e5a2aff64954c86
+2561	2612	7531330826285079	E:/GitHub/bedrock-react/BedrockApp/android/app/build/intermediates/cxx/RelWithDebInfo/w3a6b51u/obj/x86_64/libappmodules.so	72ffa973c05451a2
+13	1121	7531330811386485	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/EventEmitters.cpp.o	1d5c2563de4259ac
+10	100	7531332968523775	build.ninja	bd7c1bca72282e82
+10	1059	7531330810780952	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/States.cpp.o	cd999c2077d8e4cb
+14	1386	7531330814064974	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/ComponentDescriptors.cpp.o	292b2aee7868fae2
+11	1413	7531330814337551	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/ShadowNodes.cpp.o	e589eef757f3ee94
+9	1479	7531330814975441	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/Props.cpp.o	c3f7baf9af00dc21
+17	1576	7531330815913528	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/rnasyncstorageJSI-generated.cpp.o	7b5f98c1b63a8ef1
+0	10	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/x86_64/CMakeFiles/cmake.verify_globs	e44bb4f4261bde88
+0	10	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/x86_64/CMakeFiles/cmake.verify_globs	e44bb4f4261bde88
+1	13	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/x86_64/CMakeFiles/cmake.verify_globs	e44bb4f4261bde88
+1	11	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/x86_64/CMakeFiles/cmake.verify_globs	e44bb4f4261bde88
+1	11	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/x86_64/CMakeFiles/cmake.verify_globs	e44bb4f4261bde88
+0	10	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/x86_64/CMakeFiles/cmake.verify_globs	e44bb4f4261bde88
+1	11	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/x86_64/CMakeFiles/cmake.verify_globs	e44bb4f4261bde88

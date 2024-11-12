@@ -1,0 +1,1 @@
+E:\GitHub\bedrock-react\BedrockApp\android\app\build\intermediates\cxx\Debug\562ka256\obj\arm64-v8a

@@ -1,23 +1,52 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Node 모듈 디렉토리
+node_modules/
+ 
+# 빌드 아티팩트
+dist/
+build/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
+# 환경 설정 파일
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+# 로깅 파일
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# OS 또는 편집기에서 생성된 임시 파일
+.DS_Store
+Thumbs.db
+
+# IDE 및 에디터 파일
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Git에 의한 자동화된 파일
+*.log
+.history
+
+# Parcel 빌드 캐시 (사용 시)
+.cache/
+
+# 테스트 파일 및 보고서
+coverage/
+*.lcov
+*.lcov.*
+
+# 서비스 워커 캐시 파일 (PWA 사용 시)
+public/sw.js
+public/workbox-*
+
+# MacOS 및 Linux의 기타 시스템 파일
+*.swp
+._*
+.sass-cache/
+.cache/
+*.pid
+

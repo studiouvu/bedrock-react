@@ -1,0 +1,27 @@
+# ninja log v5
+0	17	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/armeabi-v7a/CMakeFiles/cmake.verify_globs	6faa4abdf6932353
+9	2441	7531323079068929	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/EventEmitters.cpp.o	a7911e19910ae3ff
+12	1202	7531323066751408	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/States.cpp.o	d449592dc3961c92
+7	1834	7531323073044042	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/RNCWebViewSpecJSI-generated.cpp.o	b1f30cc676de2109
+6	1885	7531323073540813	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/RNCWebViewSpec-generated.cpp.o	b236a53b6914b23f
+7	1614	7531330761931800	CMakeFiles/appmodules.dir/OnLoad.cpp.o	9ca750c11d7622ef
+14	2157	7531323076235858	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/ShadowNodes.cpp.o	fe1b0bf881e3f634
+4	2869	7531323083325981	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/ComponentDescriptors.cpp.o	30696dd0cce00c2b
+10	3071	7531323085335679	RNCWebViewSpec_autolinked_build/CMakeFiles/react_codegen_RNCWebViewSpec.dir/react/renderer/components/RNCWebViewSpec/Props.cpp.o	6732d9c9485a80eb
+8	2416	7531330769876824	CMakeFiles/appmodules.dir/E_/GitHub/bedrock-react/BedrockApp/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	6193824a0dbd7a6b
+2416	2466	7531330770435351	E:/GitHub/bedrock-react/BedrockApp/android/app/build/intermediates/cxx/RelWithDebInfo/w3a6b51u/obj/armeabi-v7a/libappmodules.so	bc247c9660b84399
+15	1151	7531330757313551	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/EventEmitters.cpp.o	5206d936e0e9c4fc
+12	148	7531332956061015	build.ninja	cc97a8c931b64636
+19	1103	7531330756827541	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/States.cpp.o	2abbd4d71bb5c596
+13	1336	7531330759152777	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/ShadowNodes.cpp.o	29628775e56da81c
+12	1382	7531330759611513	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/ComponentDescriptors.cpp.o	4a4765a60ffc5186
+10	1475	7531330760527949	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/rnasyncstorageJSI-generated.cpp.o	d88ea9fdbc583d21
+17	1530	7531330761070082	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/react/renderer/components/rnasyncstorage/Props.cpp.o	1ac17c9e4ddccc37
+20	1596	7531330761739772	rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir/rnasyncstorage-generated.cpp.o	ae76992061625b10
+1	10	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/armeabi-v7a/CMakeFiles/cmake.verify_globs	6faa4abdf6932353
+0	10	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/armeabi-v7a/CMakeFiles/cmake.verify_globs	6faa4abdf6932353
+1	11	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/armeabi-v7a/CMakeFiles/cmake.verify_globs	6faa4abdf6932353
+0	10	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/armeabi-v7a/CMakeFiles/cmake.verify_globs	6faa4abdf6932353
+0	10	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/armeabi-v7a/CMakeFiles/cmake.verify_globs	6faa4abdf6932353
+0	11	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/armeabi-v7a/CMakeFiles/cmake.verify_globs	6faa4abdf6932353
+0	10	0	E:/GitHub/bedrock-react/BedrockApp/android/app/.cxx/RelWithDebInfo/w3a6b51u/armeabi-v7a/CMakeFiles/cmake.verify_globs	6faa4abdf6932353
