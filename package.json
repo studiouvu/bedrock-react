@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "cli": "^1.0.1",
+    "nodejs": "^0.0.0",
+    "react-native": "^0.76.1",
+    "react-native-cli": "^2.0.1",
+    "react-native-webview": "^13.12.3"
+  }
+}
