@@ -13,7 +13,9 @@ import {
   StatusBar,
   ActivityIndicator,
   View,
+  Text,
   Alert,
+  TouchableOpacity,
 } from 'react-native';
 import { WebView } from 'react-native-webview';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -23,6 +25,7 @@ const DEVICE_ID_KEY = 'DEVICE_ID';
 
 const App: React.FC = () => {
   const [deviceId, setDeviceId] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null); // Error state
 
   useEffect(() => {
     const getDeviceId = async () => {
@@ -70,20 +73,36 @@ const App: React.FC = () => {
           barStyle="light-content" // 텍스트 색상을 밝은 색으로 설정
           backgroundColor="#0f0f0f" // 상태 표시줄 배경을 검은색으로 설정
         />
-        <WebView
-          source={{ uri: webViewUrl }}
-          style={styles.webview}
-          javaScriptEnabled={true}
-          domStorageEnabled={true}
-          startInLoadingState={true}
-          originWhitelist={['*']}
-          allowFileAccess={true} // 파일 접근 허용
-          mixedContentMode="always" // HTTP와 HTTPS 혼합 컨텐츠 허용
-          allowsInlineMediaPlayback={true}
-          mediaPlaybackRequiresUserAction={false}
-        // 선택 사항: 네비게이션 상태 변경 핸들링
-        // onNavigationStateChange={(navState) => { /* 상태 변경 처리 */ }}
-        />
+        {error ? (
+          // Error screen if there is an error
+          <View style={styles.errorContainer}>
+            <Text style={styles.errorText}>Error Loading Page</Text>
+            <Text style={styles.errorMessage}>{error}</Text>
+            <TouchableOpacity onPress={() => setError(null)} style={styles.retryButton}>
+              <Text style={styles.retryButtonText}>Retry</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          // WebView if no error
+          <WebView
+            source={{ uri: webViewUrl }}
+            style={styles.webview}
+            javaScriptEnabled={true}
+            domStorageEnabled={true}
+            startInLoadingState={true}
+            originWhitelist={['*']}
+            allowFileAccess={true} // 파일 접근 허용
+            mixedContentMode="always" // HTTP와 HTTPS 혼합 컨텐츠 허용
+            allowsInlineMediaPlayback={true}
+            mediaPlaybackRequiresUserAction={false}
+            onLoadEnd={() => console.log("Load Ended")}
+            onError={(syntheticEvent) => {
+              const { nativeEvent } = syntheticEvent;
+              console.error("Error loading page:", nativeEvent);
+              setError(nativeEvent.description); // Set error message in state
+            }}
+          />
+        )}
       </SafeAreaView>
     </View>
   );
@@ -107,6 +126,35 @@ const styles = StyleSheet.create({
     backgroundColor: '#0f0f0f', // 배경색을 검은색으로 설정
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  errorContainer: {
+    flex: 1,
+    backgroundColor: '#0f0f0f',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  errorText: {
+    color: '#ff6b6b', // Error title color
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  errorMessage: {
+    color: '#ffffff', // Error message color
+    fontSize: 16,
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  retryButton: {
+    backgroundColor: '#ff6b6b', // Retry button color
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 5,
+  },
+  retryButtonText: {
+    color: '#ffffff',
+    fontWeight: 'bold',
   },
 });
 
