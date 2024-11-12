@@ -69,21 +69,6 @@ const App: React.FC = () => {
   return (
     <View style={styles.outerContainer}>
       <SafeAreaView style={styles.container}>
-        <StatusBar
-          barStyle="light-content" // 텍스트 색상을 밝은 색으로 설정
-          backgroundColor="#0f0f0f" // 상태 표시줄 배경을 검은색으로 설정
-        />
-        {error ? (
-          // Error screen if there is an error
-          <View style={styles.errorContainer}>
-            <Text style={styles.errorText}>Error Loading Page</Text>
-            <Text style={styles.errorMessage}>{error}</Text>
-            <TouchableOpacity onPress={() => setError(null)} style={styles.retryButton}>
-              <Text style={styles.retryButtonText}>Retry</Text>
-            </TouchableOpacity>
-          </View>
-        ) : (
-          // WebView if no error
           <WebView
             source={{ uri: 'https://naver.com' }}
             style={styles.webview}
@@ -104,7 +89,6 @@ const App: React.FC = () => {
               setError(nativeEvent.description); // Set error message in state
             }}
           />
-        )}
       </SafeAreaView>
     </View>
   );
