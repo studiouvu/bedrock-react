@@ -77,6 +77,10 @@ const App: React.FC = () => {
           domStorageEnabled={true}
           startInLoadingState={true}
           originWhitelist={['*']}
+          allowFileAccess={true} // 파일 접근 허용
+          mixedContentMode="always" // HTTP와 HTTPS 혼합 컨텐츠 허용
+          allowsInlineMediaPlayback={true}
+          mediaPlaybackRequiresUserAction={false}
         // 선택 사항: 네비게이션 상태 변경 핸들링
         // onNavigationStateChange={(navState) => { /* 상태 변경 처리 */ }}
         />
