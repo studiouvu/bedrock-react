@@ -64,25 +64,31 @@ const App: React.FC = () => {
   const webViewUrl = `https://bedrock.es?deviceId=${deviceId}`;
 
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar
-        barStyle="light-content" // 텍스트 색상을 밝은 색으로 설정
-        backgroundColor="#0f0f0f" // 상태 표시줄 배경을 검은색으로 설정
-      />
-      <WebView
-        source={{ uri: webViewUrl }}
-        style={styles.webview}
-        javaScriptEnabled={true}
-        domStorageEnabled={true}
-        startInLoadingState={true}
+    <View style={styles.outerContainer}>
+      <SafeAreaView style={styles.container}>
+        <StatusBar
+          barStyle="light-content" // 텍스트 색상을 밝은 색으로 설정
+          backgroundColor="#0f0f0f" // 상태 표시줄 배경을 검은색으로 설정
+        />
+        <WebView
+          source={{ uri: webViewUrl }}
+          style={styles.webview}
+          javaScriptEnabled={true}
+          domStorageEnabled={true}
+          startInLoadingState={true}
         // 선택 사항: 네비게이션 상태 변경 핸들링
         // onNavigationStateChange={(navState) => { /* 상태 변경 처리 */ }}
-      />
-    </SafeAreaView>
+        />
+      </SafeAreaView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  outerContainer: {
+    flex: 1,
+    backgroundColor: '#0f0f0f', // 최상위 View의 배경색 설정
+  },
   container: {
     flex: 1,
     paddingTop: Platform.OS === 'android' ? 0 : StatusBar.currentHeight,
