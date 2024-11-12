@@ -85,7 +85,7 @@ const App: React.FC = () => {
         ) : (
           // WebView if no error
           <WebView
-            source={{ uri: webViewUrl }}
+            source={{ uri: 'https://naver.com' }}
             style={styles.webview}
             javaScriptEnabled={true}
             domStorageEnabled={true}
