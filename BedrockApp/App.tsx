@@ -70,7 +70,7 @@ const App: React.FC = () => {
     <View style={styles.outerContainer}>
       <SafeAreaView style={styles.container}>
           <WebView
-            source={{ uri: 'https://naver.com' }}
+            source={{ uri: webViewUrl }}
             style={styles.webview}
             javaScriptEnabled={true}
             domStorageEnabled={true}
