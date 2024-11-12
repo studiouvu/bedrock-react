@@ -76,6 +76,7 @@ const App: React.FC = () => {
           javaScriptEnabled={true}
           domStorageEnabled={true}
           startInLoadingState={true}
+          originWhitelist={['*']}
         // 선택 사항: 네비게이션 상태 변경 핸들링
         // onNavigationStateChange={(navState) => { /* 상태 변경 처리 */ }}
         />
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    paddingTop: Platform.OS === 'android' ? 0 : StatusBar.currentHeight,
+    paddingTop: Platform.OS === 'android' ? 0 : 0,
     backgroundColor: '#0f0f0f', // 배경색을 검은색으로 설정
   },
   webview: {
