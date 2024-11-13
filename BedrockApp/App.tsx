@@ -72,6 +72,7 @@ const App: React.FC = () => {
           <WebView
             source={{ uri: webViewUrl }}
             style={styles.webview}
+            userAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
             javaScriptEnabled={true}
             domStorageEnabled={true}
             allowsLinkPreview={false}
