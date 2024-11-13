@@ -81,6 +81,10 @@ const App: React.FC = () => {
             mixedContentMode="always" // HTTP와 HTTPS 혼합 컨텐츠 허용
             onMessage={(event) => {}}
             ref={() => {}}
+            onShouldStartLoadWithRequest={(request) => {
+              // 외부 링크를 처리
+              return true;
+            }}
             allowsInlineMediaPlayback={true}
             mediaPlaybackRequiresUserAction={false}
             onLoadEnd={() => console.log("Load Ended")}
