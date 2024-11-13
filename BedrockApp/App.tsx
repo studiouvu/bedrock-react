@@ -79,7 +79,6 @@ const App: React.FC = () => {
             originWhitelist={['*']}
             allowFileAccess={true} // 파일 접근 허용
             mixedContentMode="always" // HTTP와 HTTPS 혼합 컨텐츠 허용
-            onMessage={(event) => {}}
             ref={() => {}}
             onShouldStartLoadWithRequest={(request) => {
               // 외부 링크를 처리
@@ -88,8 +87,9 @@ const App: React.FC = () => {
             allowsInlineMediaPlayback={true}
             mediaPlaybackRequiresUserAction={false}
             onLoadEnd={() => console.log("Load Ended")}
-            onError={(syntheticEvent) => {
-              const { nativeEvent } = syntheticEvent;
+            onError={(error) => {
+              console.error(error)
+              const { nativeEvent } = error;
               console.error("Error loading page:", nativeEvent);
               setError(nativeEvent.description); // Set error message in state
             }}
