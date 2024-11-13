@@ -67,30 +67,26 @@ const App: React.FC = () => {
   const webViewUrl = `https://bedrock.es?deviceId=${deviceId}`;
 
   return (
-    <View style={styles.outerContainer}>
-      <SafeAreaView style={styles.container}>
-          <WebView
-            source={{ uri: webViewUrl }}
-            style={styles.webview}
-            javaScriptEnabled={true}
-            domStorageEnabled={true}
-            allowsLinkPreview={false}
-            originWhitelist={['*']}
-            allowFileAccess={true} // 파일 접근 허용
-            mixedContentMode="always" // HTTP와 HTTPS 혼합 컨텐츠 허용
-            onMessage={(event) => {}}
-            ref={() => {}}
-            allowsInlineMediaPlayback={true}
-            mediaPlaybackRequiresUserAction={false}
-            onLoadEnd={() => console.log("Load Ended")}
-            onError={(syntheticEvent) => {
-              const { nativeEvent } = syntheticEvent;
-              console.error("Error loading page:", nativeEvent);
-              setError(nativeEvent.description); // Set error message in state
-            }}
-          />
-      </SafeAreaView>
-    </View>
+    <WebView
+      source={{ uri: webViewUrl }}
+      style={styles.webview}
+      javaScriptEnabled={true}
+      domStorageEnabled={true}
+      allowsLinkPreview={false}
+      originWhitelist={['*']}
+      allowFileAccess={true} // 파일 접근 허용
+      mixedContentMode="always" // HTTP와 HTTPS 혼합 컨텐츠 허용
+      onMessage={(event) => { }}
+      ref={() => { }}
+      allowsInlineMediaPlayback={true}
+      mediaPlaybackRequiresUserAction={false}
+      onLoadEnd={() => console.log("Load Ended")}
+      onError={(syntheticEvent) => {
+        const { nativeEvent } = syntheticEvent;
+        console.error("Error loading page:", nativeEvent);
+        setError(nativeEvent.description); // Set error message in state
+      }}
+    />
   );
 };
 
