@@ -79,8 +79,6 @@ const App: React.FC = () => {
             originWhitelist={['*']}
             allowFileAccess={true} // 파일 접근 허용
             mixedContentMode="always" // HTTP와 HTTPS 혼합 컨텐츠 허용
-            backgroundColor="#0f0f0f"
-            opaque={false} // WebView를 불투명하게 설정하지 않음
             ref={() => {}}
             onShouldStartLoadWithRequest={(request) => {
               // 외부 링크를 처리
@@ -113,6 +111,7 @@ const styles = StyleSheet.create({
   },
   webview: {
     flex: 1,
+    backgroundColor: 'transparent',
   },
   loadingContainer: {
     flex: 1,
