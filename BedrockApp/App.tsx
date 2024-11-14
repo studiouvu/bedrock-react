@@ -26,6 +26,7 @@ const DEVICE_ID_KEY = 'DEVICE_ID';
 const App: React.FC = () => {
   const [deviceId, setDeviceId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null); // Error state
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const getDeviceId = async () => {
@@ -69,32 +70,37 @@ const App: React.FC = () => {
   return (
     <View style={styles.outerContainer}>
       <SafeAreaView style={styles.container}>
-          <WebView
-            source={{ uri: webViewUrl }}
-            style={styles.webview}
-            userAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
-            javaScriptEnabled={true}
-            domStorageEnabled={true}
-            allowsLinkPreview={false}
-            originWhitelist={['*']}
-            allowFileAccess={true} // 파일 접근 허용
-            mixedContentMode="always" // HTTP와 HTTPS 혼합 컨텐츠 허용
-            ref={() => {}}
-            decelerationRate="normal"
-            onShouldStartLoadWithRequest={(request) => {
-              // 외부 링크를 처리
-              return true;
-            }}
-            allowsInlineMediaPlayback={true}
-            mediaPlaybackRequiresUserAction={false}
-            onLoadEnd={() => console.log("Load Ended")}
-            onError={(error) => {
-              console.error(error)
-              const { nativeEvent } = error;
-              console.error("Error loading page:", nativeEvent);
-              setError(nativeEvent.description); // Set error message in state
-            }}
-          />
+        <WebView
+          source={{ uri: webViewUrl }}
+          style={[
+            styles.webview,
+            { backgroundColor: isLoading ? 'transparent' : '#0f0f0f' },
+          ]}
+          userAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+          javaScriptEnabled={true}
+          domStorageEnabled={true}
+          allowsLinkPreview={false}
+          originWhitelist={['*']}
+          allowFileAccess={true} // 파일 접근 허용
+          mixedContentMode="always" // HTTP와 HTTPS 혼합 컨텐츠 허용
+          ref={() => { }}
+          decelerationRate="normal"
+          onShouldStartLoadWithRequest={(request) => {
+            // 외부 링크를 처리
+            return true;
+          }}
+          allowsInlineMediaPlayback={true}
+          mediaPlaybackRequiresUserAction={false}
+          onLoadStart={() => setIsLoading(true)}
+          onLoadEnd={() => setIsLoading(false)}
+          onLoad={() => setIsLoading(false)}
+          onError={(error) => {
+            console.error(error)
+            const { nativeEvent } = error;
+            console.error("Error loading page:", nativeEvent);
+            setError(nativeEvent.description); // Set error message in state
+          }}
+        />
       </SafeAreaView>
     </View>
   );
@@ -112,7 +118,6 @@ const styles = StyleSheet.create({
   },
   webview: {
     flex: 1,
-    backgroundColor: 'rgba(255, 255, 255, 0)',
   },
   loadingContainer: {
     flex: 1,
