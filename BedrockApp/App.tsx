@@ -26,7 +26,7 @@ const DEVICE_ID_KEY = 'DEVICE_ID';
 const App: React.FC = () => {
   const [deviceId, setDeviceId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null); // Error state
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getDeviceId = async () => {
