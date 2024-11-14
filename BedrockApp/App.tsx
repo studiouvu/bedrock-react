@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   },
   webview: {
     flex: 1,
-    backgroundColor: 'transparent',
+    backgroundColor: 'rgba(255, 255, 255, 0)',
   },
   loadingContainer: {
     flex: 1,
