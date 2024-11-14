@@ -80,6 +80,7 @@ const App: React.FC = () => {
             allowFileAccess={true} // 파일 접근 허용
             mixedContentMode="always" // HTTP와 HTTPS 혼합 컨텐츠 허용
             ref={() => {}}
+            decelerationRate="normal"
             onShouldStartLoadWithRequest={(request) => {
               // 외부 링크를 처리
               return true;
@@ -111,7 +112,7 @@ const styles = StyleSheet.create({
   },
   webview: {
     flex: 1,
-    backgroundColor: 'transparent',
+    backgroundColor: '#0f0f0f',
   },
   loadingContainer: {
     flex: 1,
