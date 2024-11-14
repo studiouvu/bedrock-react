@@ -50,3 +50,5 @@ public/workbox-*
 .cache/
 *.pid
 
+BedrockApp/ios/Pods
+ipa
