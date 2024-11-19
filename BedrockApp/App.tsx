@@ -109,7 +109,7 @@ const App: React.FC = () => {
             source={{ uri: webViewUrl }}
             style={[
               styles.webview,
-              { backgroundColor: '#0f0f0f' },
+              { backgroundColor: isLoading ? 'transparent' : '#0f0f0f' },
             ]}
             userAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
             javaScriptEnabled={true}
@@ -133,6 +133,10 @@ const App: React.FC = () => {
               console.error('Error loading page:', nativeEvent);
               setError(nativeEvent.description); // Set error message in state
             }}
+            renderLoading={() => (
+              <View style={{ flex: 1, backgroundColor: '#0f0f0f', justifyContent: 'center', alignItems: 'center' }}>
+              </View>
+            )}
           />
       </SafeAreaView>
     </View>
