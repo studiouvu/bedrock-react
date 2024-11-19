@@ -5,7 +5,7 @@
  * @format
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -16,6 +16,8 @@ import {
   Text,
   Alert,
   TouchableOpacity,
+  AppState,
+  AppStateStatus,
 } from 'react-native';
 import { WebView } from 'react-native-webview';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -27,6 +29,8 @@ const App: React.FC = () => {
   const [deviceId, setDeviceId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null); // Error state
   const [isLoading, setIsLoading] = useState(true);
+  const webViewRef = useRef<WebView>(null); // WebView ref
+  const appState = useRef<AppStateStatus>(AppState.currentState);
 
   useEffect(() => {
     const getDeviceId = async () => {
@@ -55,6 +59,30 @@ const App: React.FC = () => {
     getDeviceId();
   }, []);
 
+  useEffect(() => {
+    const handleAppStateChange = (nextAppState: AppStateStatus) => {
+      if (
+        appState.current.match(/inactive|background/) &&
+        nextAppState === 'active'
+      ) {
+        console.log('App has come to the foreground! Reloading WebView...');
+        if (webViewRef.current) {
+          webViewRef.current.reload();
+        }
+      }
+      appState.current = nextAppState;
+    };
+
+    const subscription = AppState.addEventListener(
+      'change',
+      handleAppStateChange
+    );
+
+    return () => {
+      subscription.remove();
+    };
+  }, []);
+
   // deviceId가 아직 로드되지 않은 경우 로딩 인디케이터 표시
   if (!deviceId) {
     return (
@@ -70,37 +98,54 @@ const App: React.FC = () => {
   return (
     <View style={styles.outerContainer}>
       <SafeAreaView style={styles.container}>
-        <WebView
-          source={{ uri: webViewUrl }}
-          style={[
-            styles.webview,
-            { backgroundColor: isLoading ? 'transparent' : '#0f0f0f' },
-          ]}
-          userAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
-          javaScriptEnabled={true}
-          domStorageEnabled={true}
-          allowsLinkPreview={false}
-          originWhitelist={['*']}
-          allowFileAccess={true} // 파일 접근 허용
-          mixedContentMode="always" // HTTP와 HTTPS 혼합 컨텐츠 허용
-          ref={() => { }}
-          decelerationRate="normal"
-          onShouldStartLoadWithRequest={(request) => {
-            // 외부 링크를 처리
-            return true;
-          }}
-          allowsInlineMediaPlayback={true}
-          mediaPlaybackRequiresUserAction={false}
-          onLoadStart={() => setIsLoading(true)}
-          onLoadEnd={() => setIsLoading(false)}
-          onLoad={() => setIsLoading(false)}
-          onError={(error) => {
-            console.error(error)
-            const { nativeEvent } = error;
-            console.error("Error loading page:", nativeEvent);
-            setError(nativeEvent.description); // Set error message in state
-          }}
-        />
+        {error ? (
+          <View style={styles.errorContainer}>
+            <Text style={styles.errorText}>Error</Text>
+            <Text style={styles.errorMessage}>{error}</Text>
+            <TouchableOpacity
+              style={styles.retryButton}
+              onPress={() => {
+                setError(null);
+                if (webViewRef.current) {
+                  webViewRef.current.reload();
+                }
+              }}
+            >
+              <Text style={styles.retryButtonText}>Retry</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <WebView
+            ref={webViewRef}
+            source={{ uri: webViewUrl }}
+            style={[
+              styles.webview,
+              { backgroundColor: isLoading ? 'transparent' : '#0f0f0f' },
+            ]}
+            userAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+            javaScriptEnabled={true}
+            domStorageEnabled={true}
+            allowsLinkPreview={false}
+            originWhitelist={['*']}
+            allowFileAccess={true} // 파일 접근 허용
+            mixedContentMode="always" // HTTP와 HTTPS 혼합 컨텐츠 허용
+            decelerationRate="normal"
+            onShouldStartLoadWithRequest={(request) => {
+              // 외부 링크를 처리
+              return true;
+            }}
+            allowsInlineMediaPlayback={true}
+            mediaPlaybackRequiresUserAction={false}
+            onLoadStart={() => setIsLoading(true)}
+            onLoadEnd={() => setIsLoading(false)}
+            onLoad={() => setIsLoading(false)}
+            onError={(syntheticEvent) => {
+              const { nativeEvent } = syntheticEvent;
+              console.error('Error loading page:', nativeEvent);
+              setError(nativeEvent.description); // Set error message in state
+            }}
+          />
+        )}
       </SafeAreaView>
     </View>
   );
