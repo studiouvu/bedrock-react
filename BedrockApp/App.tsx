@@ -104,23 +104,6 @@ const App: React.FC = () => {
   return (
     <View style={styles.outerContainer}>
       <SafeAreaView style={styles.container}>
-        {error ? (
-          <View style={styles.errorContainer}>
-            <Text style={styles.errorText}>Error</Text>
-            <Text style={styles.errorMessage}>{error}</Text>
-            <TouchableOpacity
-              style={styles.retryButton}
-              onPress={() => {
-                setError(null);
-                if (webViewRef.current) {
-                  webViewRef.current.reload();
-                }
-              }}
-            >
-              <Text style={styles.retryButtonText}>Retry</Text>
-            </TouchableOpacity>
-          </View>
-        ) : (
           <WebView
             ref={webViewRef}
             source={{ uri: webViewUrl }}
@@ -151,7 +134,6 @@ const App: React.FC = () => {
               setError(nativeEvent.description); // Set error message in state
             }}
           />
-        )}
       </SafeAreaView>
     </View>
   );
