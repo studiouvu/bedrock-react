@@ -1,17 +1,8 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React, { useEffect, useState, useRef } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
   Platform,
-  StatusBar,
-  ActivityIndicator,
   View,
   Text,
   Alert,
@@ -31,6 +22,7 @@ const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const webViewRef = useRef<WebView>(null); // WebView ref
   const appState = useRef<AppStateStatus>(AppState.currentState);
+  const lastBackgroundTime = useRef<number | null>(null); // 마지막 백그라운드 진입 시간
 
   useEffect(() => {
     const getDeviceId = async () => {
@@ -62,12 +54,27 @@ const App: React.FC = () => {
   useEffect(() => {
     const handleAppStateChange = (nextAppState: AppStateStatus) => {
       if (
+        appState.current === 'active' &&
+        nextAppState.match(/inactive|background/)
+      ) {
+        // 앱이 백그라운드로 전환될 때 시간 기록
+        lastBackgroundTime.current = Date.now();
+        console.log('App has gone to the background');
+      } else if (
         appState.current.match(/inactive|background/) &&
         nextAppState === 'active'
       ) {
-        console.log('App has come to the foreground! Reloading WebView...');
-        if (webViewRef.current) {
-          webViewRef.current.reload();
+        // 앱이 포그라운드로 돌아올 때 경과 시간 계산
+        console.log('App has come to the foreground!');
+        const currentTime = Date.now();
+        const timeInBackground = currentTime - (lastBackgroundTime.current || 0);
+        if (timeInBackground > 3600000) { // 1시간 = 3600000밀리초
+          console.log('More than one hour passed in background, reloading WebView');
+          if (webViewRef.current) {
+            webViewRef.current.reload();
+          }
+        } else {
+          console.log('Less than one hour passed in background, not reloading WebView');
         }
       }
       appState.current = nextAppState;
@@ -87,7 +94,6 @@ const App: React.FC = () => {
   if (!deviceId) {
     return (
       <SafeAreaView style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#0f0f0f" />
       </SafeAreaView>
     );
   }
@@ -166,7 +172,7 @@ const styles = StyleSheet.create({
   },
   loadingContainer: {
     flex: 1,
-    backgroundColor: '#0f0f0f', // 배경색을 검은색으로 설정
+    backgroundColor: 'transparent', // 배경색을 검은색으로 설정
     justifyContent: 'center',
     alignItems: 'center',
   },
