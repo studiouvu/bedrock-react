@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
   },
   loadingContainer: {
     flex: 1,
-    backgroundColor: 'transparent', // 배경색을 검은색으로 설정
+    backgroundColor: '#0f0f0f', // 배경색을 설정
     justifyContent: 'center',
     alignItems: 'center',
   },
